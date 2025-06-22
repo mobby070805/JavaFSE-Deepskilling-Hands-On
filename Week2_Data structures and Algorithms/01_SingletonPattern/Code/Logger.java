@@ -1,19 +1,22 @@
+package com.singleton;
+
 public class Logger {
-    private static Logger singleInstance;
+
+    private static Logger instance;
 
     private Logger() {
         System.out.println("Logger instance created.");
     }
 
     public static Logger getInstance() {
-        if (singleInstance == null) {
-            singleInstance = new Logger();
+        if (instance == null) {
+            instance = new Logger();
         }
-        return singleInstance;
+        return instance;
     }
 
     public void log(String message) {
-        System.out.println("LOG: " + message);
+        System.out.println("[LOG] " + message);
     }
 }
 

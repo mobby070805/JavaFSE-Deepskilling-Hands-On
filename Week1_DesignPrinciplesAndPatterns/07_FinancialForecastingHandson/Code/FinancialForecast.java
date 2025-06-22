@@ -1,16 +1,24 @@
+package com.forecast;
+
 public class FinancialForecast {
 
-    public static double predictFutureValue(double currentValue, double growthRate, int years) {
-        if (years == 0) return currentValue;
-        return predictFutureValue(currentValue * (1 + growthRate), growthRate, years - 1);
+    public static double calculateFutureValue(double principal, double annualRate, int years) {
+        if (years == 0) {
+            return principal;
+        }
+        return calculateFutureValue(principal * (1 + annualRate), annualRate, years - 1);
     }
 
     public static void main(String[] args) {
-        double presentValue = 10000;
-        double annualGrowthRate = 0.1; 
-        int years = 5;
+        double initialAmount = 8000.00;
+        double growthRate = 0.12;
+        int forecastYears = 4;
 
-        double futureValue = predictFutureValue(presentValue, annualGrowthRate, years);
-        System.out.printf("Predicted value after %d years: ₹%.2f\n", years, futureValue);
+        double predictedValue = calculateFutureValue(initialAmount, growthRate, forecastYears);
+
+        System.out.println("Initial Amount: ₹" + initialAmount);
+        System.out.println("Annual Growth Rate: " + (growthRate * 100) + "%");
+        System.out.println("Forecast Duration: " + forecastYears + " years");
+        System.out.println("Predicted Future Value: ₹" + String.format("%.2f", predictedValue));
     }
 }

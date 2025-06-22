@@ -1,6 +1,7 @@
-public class WordDocument implements MyDocument {
-    @Override
+package com.factory;
+
+public class WordDocument implements Document {
     public void open() {
-        System.out.println("Opening Word document.");
+        System.out.println("Word document opened.");
     }
 }

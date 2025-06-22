@@ -1,6 +1,7 @@
-public class PdfDocument implements MyDocument {
-    @Override
+package com.factory;
+
+public class PdfDocument implements Document {
     public void open() {
-        System.out.println("Opening PDF document.");
+        System.out.println("PDF document opened.");
     }
 }

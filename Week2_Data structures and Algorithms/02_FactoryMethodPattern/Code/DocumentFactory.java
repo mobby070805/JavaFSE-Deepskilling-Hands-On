@@ -1,4 +1,6 @@
+package com.factory;
 
 public abstract class DocumentFactory {
-   public abstract MyDocument createDocument(); 
+    public abstract Document createDocument();
 }
+
